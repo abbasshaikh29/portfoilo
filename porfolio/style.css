@@ -1,0 +1,208 @@
+@import url("https://fonts.cdnfonts.com/css/ica-rubrik-black");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0c0c0c;
+}
+nav li a {
+  color: #ffffff98;
+  font-family: "ICA Rubrik";
+  margin-left: 20px;
+  text-decoration: none;
+}
+nav li a:hover {
+  color: #91eb42;
+}
+.social {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  font-size: 2em;
+  gap: 25px;
+  margin: 17px 0px;
+}
+.social li :hover {
+  color: #91eb42;
+}
+.social button {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 170px;
+  font-family: "ICA Rubrik";
+  font-size: 16px;
+}
+.social button:hover {
+  color: #090808;
+  background-color: #91eb42;
+}
+.home {
+  display: flex;
+  flex-direction: row;
+}
+
+.intro {
+  position: relative;
+  height: 100vh;
+  width: 40%;
+}
+
+.intro .cont {
+  position: relative;
+  top: 4.5em;
+  color: #fefefe;
+  left: 3em;
+  z-index: 1;
+}
+.intro h2 {
+  font-family: "ICA Rubrik";
+  font-size: 2.5em;
+  line-height: 1em;
+}
+.intro h1 {
+  font-family: "ICA Rubrik";
+  font-size: 7em;
+  line-height: 1em;
+}
+.intro p {
+  font-family: "poppins";
+  font-size: 1.5rem;
+  line-height: 1em;
+  position: relative;
+}
+.banner {
+  background: #91eb42;
+  border-radius: 40px 0px 0px 40px;
+  width: 60%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.banner .slider {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 10%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 8s linear infinite;
+  z-index: 3;
+}
+@keyframes autoRun {
+  from {
+    transform: perspective(2000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(2000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(350px);
+}
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner .content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+.banner .content h1 {
+  font-family: "ICA Rubrik";
+  font-size: 13.75em;
+  line-height: 1em;
+  color: #ffffff;
+  position: relative;
+  top: 2.05em;
+  left: 1.05em;
+}
+.banner .content h1::after {
+  position: absolute;
+  inset: 0 0 0 0;
+  content: attr(data-content);
+  z-index: 2;
+  -webkit-text-stroke: 2px #ffffff;
+  color: transparent;
+}
+
+.banner .content .model {
+  background-image: url(images/model.png);
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  background-size: auto 130%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: 1;
+}
+/* @media screen and (max-width: 1023px) {
+  .banner .slider {
+    width: 160px;
+    height: 200px;
+    left: calc(50% - 80px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(300px);
+  }
+  .banner .content h1 {
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 10px 20px #000;
+    font-size: 7em;
+  }
+  .banner .content .author {
+    color: #fff;
+    padding: 20px;
+    text-shadow: 0 10px 20px #000;
+    z-index: 2;
+    max-width: unset;
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner .slider {
+    width: 100px;
+    height: 150px;
+    left: calc(50% - 50px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(180px);
+  }
+  .banner .content h1 {
+    font-size: 5em;
+  }
+} */
